@@ -18,7 +18,7 @@ progress.sh is a very simple script that was born from my need to count the numb
 
 Usage
 -----
-progress.sh takes two arguments, only the first is required.
+progress.sh takes two arguments, only the first is required. If second is also specified, then it can work for a command that is counting down as well. For example, if your job is removing files from a directory, you can give this argument as zero and have first argument as "ls thatdir" and it will track progress like that.
 
 The first is the command that progress.sh will run once every 30 seconds.  What this command actually is, is completely up to you.  The only requirement is that it returns an integer.
 
