@@ -12,7 +12,7 @@ if [ -n "$1" ]; then
   else
     TOTAL=0
   fi
-else 
+else
   echo "ARG1 should be a command that generates an integer!"
   echo "ARG2 (optional) should be the end integer."
   exit 1;
@@ -25,7 +25,7 @@ if [ $NOW -eq $NOW 2> /dev/null ]; then
     echo "Running of '$CMD' produced output that is not greater than or equal to 0.";
     exit 1;
   fi
-else 
+else
     echo "Running of '$CMD' produced output that is not an integer.";
     exit 1;
 fi
@@ -41,7 +41,7 @@ while [ true ]; do
   LATER=$(eval $CMD)
   if [ $LATER -lt $NOW ]; then
     DALATER=$(echo "$DATOTAL - $LATER"|bc -l)
-    RECS=$(echo "scale=2; ($NOW - $DALATER) / $SLEEP" | bc -l)
+    RECS=$(echo "scale=2; ($NOW - $LATER) / $SLEEP" | bc -l)
   else
     DALATER=$LATER
     RECS=$(echo "scale=2; ($DALATER - $NOW) / $SLEEP" | bc -l)
